@@ -138,9 +138,17 @@
       "name": "placeholder",
       "label": "占位提示符",
       "group": "Valine评论系统",
-      "type": false,
-      "value": "Just Go Go",
+      "type": "input",
+      "value": "",
       "note": "评论区占位提示符"
+    },
+    {
+      "name": "CustomBG",
+     "label": " 评论框背景图片",
+      "group": "Valine评论系统",
+      "value": "",
+      "type": "input",
+    "note": "自定义评论框背景图片"
     },
 
     {

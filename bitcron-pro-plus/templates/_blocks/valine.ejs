@@ -1,7 +1,8 @@
 <!--评论显示区，请插入合适的位置-->
 <div id="comment"></div>
 <!--Leancloud 操作库:-->
-<script src="//cdn1.lncld.net/static/js/3.6.1/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.13.2/dist/av-min.js"></script>
+<!--<script src="//cdn1.lncld.net/static/js/3.6.1/av-min.js"></script>-->
 <!--Valine 的核心代码库-->
 <script src="//cdnjs.cloudflare.com/ajax/libs/valine/1.5.1/Valine.min.js"></script>
 <!--<script src="//cdn.jsdelivr.net/npm/valine@1.4.4/dist/Valine.min.js"></script>-->
@@ -190,3 +191,35 @@
     })
     .catch(console.error)
 </script>
+<script>
+// 自定义邮箱审核规则
+document.body.addEventListener('click', function (e) {
+    if (e.target.classList.contains('vsubmit')) {
+        const email = document.querySelector('input[type=email]');
+        const nick = document.querySelector('input[name=nick]');
+        const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+        if (!email.value || !nick.value || !reg.test(email.value)) {
+            const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+            const vmark = document.querySelector('.vmark');
+            vmark.innerHTML = str;
+            vmark.style.display = 'block';
+            setTimeout(function () {
+                vmark.style.display = 'none';
+                vmark.innerHTML = '';
+            }, 2500);
+        }
+    }
+})
+</script>
+<% if (site.customConfig.CustomBG) { %>
+<style>
+    #veditor {
+    /*评论框背景图片*/
+    box-sizing: border-box;
+    background: url("<%= site.customConfig['CustomBG'] %>") 100% 100% no-repeat;
+    background-size: contain;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    }
+</style>
+<% } %>
