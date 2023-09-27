@@ -6,7 +6,6 @@
 <% } %>
 
 <a id="scrollUp" href="#" style="position: fixed; z-index: 2147483647; display: block;"></a><div class="footer animated fadeInDown"><div class="site_footer"><div class="mysocials"><div class="my_socials"><%['telegram','twitter','weibo','github','envelope','rss','zhihu'].forEach((item)=>{%><%if(site.customConfig[item]){%><a href="<%= site.customConfig[item] %>"title="<%= item %>"><i class="iconfont icon-<%= item %>"></i></a><%}%><%})%></div></div><div class="copyright"id="copyright"><%-themeConfig.footerInfo%>Copyright © <a href="<%= themeConfig.domain %>" style="margin:0;"><%= themeConfig.siteName %></a>.</div>
-<div><div class="github-badge"><a href="https://open.gridea.dev" target="_blank" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Gridea</span></a></div><div style="display: inline-block">&nbsp;</div><div class="github-badge"><a href="https://github.com/Wu-jiyan/gridea-theme-bitcron-pro-plus" target="_blank" rel="nofollow"><span class="badge-subject">Theme</span><span class="badge-value bg-green">Bitcron Pro Plus</span></a></div></div>
 <span style="display: inline;margin-right:15px;">👁<strong><span id="busuanzi_value_site_pv"></span></strong></span>
 <span style="display: inline;margin-right:15px;">👤<strong><span id="busuanzi_value_site_uv"></span></strong></span>
 <span>📚<strong><%=site.posts.length%></strong> posts</span>
